@@ -1,0 +1,20 @@
+.header{
+    width: 25%;
+    height: 100vh;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    overflow: auto;
+
+    &__logo{
+        h1{
+            font-size: 3em;
+        }
+    }
+
+    &__nav{
+        border: 0;
+    }
+}
