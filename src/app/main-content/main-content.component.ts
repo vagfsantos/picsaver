@@ -11,11 +11,5 @@ export class MainContentComponent {
     pictureList: Picture [];
 
     constructor() {
-        this.pictureList = [
-            new Picture('sports', 'this is a description', 'http://lorempixel.com/400/200/sports'),
-            new Picture('sports', 'this is a description', 'http://lorempixel.com/400/200/sports'),
-            new Picture('sports', 'this is a description', 'http://lorempixel.com/400/200/sports'),
-            new Picture('sports', 'this is a description', 'http://lorempixel.com/400/200/sports')
-        ]
     }
 }

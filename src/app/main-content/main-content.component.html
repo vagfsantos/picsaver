@@ -1,9 +1,13 @@
 <div class="row">
     <div class="col s9 offset-s3">
-        <div >
+        <div *ngIf="pictureList; then list else notFound"></div>
+        <ng-template #list>
           <app-picture-list *ngFor="let picture of pictureList">
             <app-picture [picture]="picture"></app-picture>
           </app-picture-list>
-        </div>
+        </ng-template>
+        <ng-template #notFound>
+          <app-no-picture-found></app-no-picture-found>
+        </ng-template>
     </div>
 </div>
