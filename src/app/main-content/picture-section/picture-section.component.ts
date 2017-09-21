@@ -1,0 +1,19 @@
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-picture-section',
+  template: `
+    <div *ngIf="pictureList; then list else notFound"></div>
+    <ng-template #list>
+      <app-picture-list *ngFor="let picture of pictureList">
+        <app-picture [picture]="picture"></app-picture>
+      </app-picture-list>
+    </ng-template>
+    <ng-template #notFound>
+      <app-no-picture-found></app-no-picture-found>
+    </ng-template>
+  `
+})
+
+export class PictureSectionComponent {
+
+}
