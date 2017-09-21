@@ -10,24 +10,23 @@ import { PictureService } from './picture/picture.service';
 })
 
 export class MainContentComponent implements OnInit{
-    pictureList: Picture []
+  pictureList: Picture []
 
-    constructor(private pictureService: PictureService) {
+  constructor(private pictureService: PictureService) {
 
-    }
+  }
 
-    ngOnInit() {
-      this.pictureService.getImages()
-        .then( (pics: Picture[]) => this.pictureList = pics )
-        .catch( error => console.log(error) )
-    }
+  ngOnInit() {
+    this.pictureService.getImages()
+      .then( (pics: Picture[]) => this.pictureList = pics )
+      .catch( error => console.log(error) )
+  }
 
-    saveImage(event) {
-      this.pictureService.saveImages([{
-        id: 10,
-        title: 'title',
-        description: 'description',
-        imageUrl: 'Image Url'
-      }])
-    }
+  addNewImage(event) {
+
+  }
+
+  saveImage(picture: Picture[]) {
+    this.pictureService.saveImages(picture)
+  }
 }
