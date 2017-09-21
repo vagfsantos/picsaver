@@ -6,6 +6,8 @@ import { PictureListComponent } from './picture-list/picture-list.component';
 import { PictureComponent } from './picture/picture.component';
 import { NoPicutureFoundComponent } from './no-picture-found/no-picture-found.component';
 
+import { PictureService } from './picture/picture.service';
+
 @NgModule({
   declarations: [
     MainContentComponent,
@@ -16,6 +18,10 @@ import { NoPicutureFoundComponent } from './no-picture-found/no-picture-found.co
 
   imports: [
     CommonModule
+  ],
+
+  providers: [
+    PictureService
   ],
 
   exports: [
