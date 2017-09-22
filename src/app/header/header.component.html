@@ -3,7 +3,23 @@
         <h1>Picsaver</h1>
     </div>
     <ul class="header__nav collection center-align">
-        <li><a [RouterLink]="" class="collection-item active">Home</a></li>
-        <li><a [RouterLink]="/new" class="collection-item">New picture</a></li>
+        <li>
+            <a
+            [routerLink]="['/']"
+            [routerLinkActiveOptions]="{exact:true}"
+            routerLinkActive="active"
+            class="collection-item">
+              Home
+            </a>
+        </li>
+        <li>
+          <a
+          [routerLink]="['/new']"
+          [routerLinkActiveOptions]="{exact:true}"
+          routerLinkActive="active"
+          class="collection-item">
+            New picture
+          </a>
+        </li>
     </ul>
 </header>
