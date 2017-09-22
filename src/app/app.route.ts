@@ -1,8 +1,20 @@
-import {RouterModule} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { PictureSectionComponent } from './main-content/picture-section/picture-section.component';
 import { PictureFormComponent } from './main-content/picture-form/picture-form.component';
 
-export const RoutingSetting = RouterModule.forRoot([
+const RoutingSetting: Routes = [
   {path: '', component: PictureSectionComponent },
   {path: 'new', component: PictureFormComponent }
-])
+]
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(RoutingSetting)
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+
+export class AppRouteModule {}

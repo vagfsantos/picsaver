@@ -12,7 +12,7 @@ import { AddPictureButtonComponent } from './add-picture-button/add-picture-butt
 
 // modules
 import { MainContentModule } from './main-content/main-content.module';
-import { RoutingSetting } from './app.route';
+import { AppRouteModule } from './app.route';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { RoutingSetting } from './app.route';
     MaterializeModule,
     BrowserModule,
     MainContentModule,
-    RoutingSetting
+    AppRouteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

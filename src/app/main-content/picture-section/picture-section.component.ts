@@ -1,19 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { Picture } from './../picture/picture.interface';
+import { PictureService } from './../picture/picture.service';
+
 @Component({
   selector: 'app-picture-section',
-  template: `
-    <div *ngIf="pictureList; then list else notFound"></div>
-    <ng-template #list>
-      <app-picture-list *ngFor="let picture of pictureList">
-        <app-picture [picture]="picture"></app-picture>
-      </app-picture-list>
-    </ng-template>
-    <ng-template #notFound>
-      <app-no-picture-found></app-no-picture-found>
-    </ng-template>
-  `
+  templateUrl: './picture-section.component.html'
 })
 
 export class PictureSectionComponent {
+  pictureList: Picture []
 
+  constructor(private pictureService: PictureService) {
+
+  }
+
+  ngOnInit() {
+    this.pictureService.getImages()
+      .then( (pics: Picture[]) => this.pictureList = pics)
+      .catch( error => console.log(error) )
+  }
 }

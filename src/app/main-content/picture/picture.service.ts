@@ -13,8 +13,10 @@ export class PictureService {
     })
   }
 
-  saveImages( pictures: Picture[] ): Promise<Object> {
+  saveImage( pic: Picture ): Promise<Object> {
     return new Promise( (resolve, reject) => {
+      let pictures = JSON.parse(window.localStorage.getItem( this.localStoreId )) || []
+      pictures.push(pic)
       let picturesInStr = JSON.stringify(pictures)
       window.localStorage.setItem( this.localStoreId, picturesInStr )
       let newArray = window.localStorage.getItem( this.localStoreId )

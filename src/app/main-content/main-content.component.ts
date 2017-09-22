@@ -1,7 +1,5 @@
 import { Picture } from './picture/picture.interface';
-import { Component, OnInit } from '@angular/core';
-
-import { PictureService } from './picture/picture.service';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-main-content',
@@ -9,24 +7,6 @@ import { PictureService } from './picture/picture.service';
     styleUrls: ['./main-content.component.scss']
 })
 
-export class MainContentComponent implements OnInit{
-  pictureList: Picture []
+export class MainContentComponent {
 
-  constructor(private pictureService: PictureService) {
-
-  }
-
-  ngOnInit() {
-    this.pictureService.getImages()
-      .then( (pics: Picture[]) => this.pictureList = pics )
-      .catch( error => console.log(error) )
-  }
-
-  addNewImage(event) {
-
-  }
-
-  saveImage(picture: Picture[]) {
-    this.pictureService.saveImages(picture)
-  }
 }
