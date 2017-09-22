@@ -12,7 +12,10 @@ import { PictureService } from './../picture/picture.service';
 export class PictureFormComponent {
   picture: Picture
 
-  constructor(private pictureService: PictureService, private router: Router) {
+  constructor(
+    private pictureService: PictureService,
+    private router: Router
+  ) {
     this.picture = new Picture;
   }
 
