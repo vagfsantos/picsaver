@@ -16,6 +16,7 @@ export class PictureSectionComponent {
   }
 
   ngOnInit() {
+    console.log('init');
     this.pictureService.getImages()
       .then( (pics: Picture[]) => this.pictureList = pics)
       .catch( error => console.log(error) )

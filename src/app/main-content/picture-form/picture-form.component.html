@@ -1,6 +1,10 @@
-<form #form class="row" (submit)="savePicture($event)">
+<form
+#form class="row"
+(submit)="savePicture($event)">
   <br>
-  <h4 class="center-align indigo-text">New picture!</h4>
+  <h4 class="center-align indigo-text">
+    {{editMode ? picture.title : 'New picture!'}}
+  </h4>
   <br>
   <div class="card-panel grey lighten-5 z-depth-1">
     <div class="valign-wrapper">
@@ -17,7 +21,9 @@
             class="validate"
             required
             [(ngModel)]="picture.title">
-          <label for="title">Title</label>
+          <label
+          for="title"
+          [class.active]="editMode">Title</label>
         </div>
         <div class="input-field col s6">
           <input
@@ -28,7 +34,9 @@
             class="validate"
             required
             [(ngModel)]="picture.imageUrl">
-          <label for="image">Image</label>
+          <label
+          for="image"
+          [class.active]="editMode">Image</label>
         </div>
         <div class="input-field col s12">
           <textarea
@@ -37,10 +45,15 @@
           name="description"
           class="materialize-textarea"
           required
+          maxlength="100"
           [(ngModel)]="picture.description"></textarea>
-          <label for="description">Description</label>
+          <label
+          for="description"
+          [class.active]="editMode">Description</label>
         </div>
-        <button type="submit" [disabled]="form.invalid" class="btn">save</button>
+        <button
+        type="submit"
+        class="btn">{{editMode ? 'save changes': 'save'}}</button>
       </div>
     </div>
   </div>

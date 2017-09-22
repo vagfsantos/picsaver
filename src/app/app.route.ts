@@ -5,7 +5,8 @@ import { PictureFormComponent } from './main-content/picture-form/picture-form.c
 
 const RoutingSetting: Routes = [
   {path: '', component: PictureSectionComponent },
-  {path: 'new', component: PictureFormComponent }
+  {path: 'new', component: PictureFormComponent },
+  {path: 'edit/:id', component: PictureFormComponent }
 ]
 
 @NgModule({
