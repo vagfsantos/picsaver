@@ -7,12 +7,39 @@
     top: 0;
 
     overflow: auto;
+    z-index: 10;
+
+    background-color: #fff;
+
+    @media screen and (max-width: 600px) {
+      width: 100%;
+      height: auto;
+    }
 
     h1{
         font-size: 3em;
+        @media screen and (max-width: 600px) {
+          font-size: 2em;
+          margin: 0.4em 0;
+        }
     }
 
     &__nav{
         border: 0;
+
+        @media screen and (max-width: 600px) {
+          margin: 0;
+
+          li{
+            width: 50%;
+            float: left;
+          }
+
+          &:after{
+            content:'';
+            display: table;
+            clear: both;
+          }
+        }
     }
 }

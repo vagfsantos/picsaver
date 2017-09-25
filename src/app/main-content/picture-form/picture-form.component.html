@@ -7,12 +7,12 @@
   </h4>
   <br>
   <div class="card-panel grey lighten-5 z-depth-1">
-    <div class="valign-wrapper">
-      <div class="col s6">
+    <div class="row">
+      <div class="col m6 s12">
         <app-picture-form-preview [picture]="picture"></app-picture-form-preview>
       </div>
-      <div class="col s6">
-        <div class="input-field col s6">
+      <div class="col m6 s12">
+        <div class="input-field col m6 s12">
           <input
             #title
             id="title"
@@ -25,7 +25,7 @@
           for="title"
           [class.active]="editMode">Title</label>
         </div>
-        <div class="input-field col s6">
+        <div class="input-field col m6 s12">
           <input
             #image
             id="image"
