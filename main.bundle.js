@@ -20,7 +20,7 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 /***/ "../../../../../src/app/add-picture-button/add-picture-button.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"add-picture-button\">\r\n    <a class=\"btn-floating btn-large waves-effect waves-light green pulse\">\r\n        <i class=\"material-icons\">add</i>\r\n    </a>\r\n</div>\r\n"
+module.exports = "<div class=\"add-picture-button\">\r\n    <a [routerLink]=\"'/new'\" class=\"btn-floating btn-large waves-effect waves-light green pulse\">\r\n        <i class=\"material-icons\">add</i>\r\n    </a>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -245,7 +245,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".header {\n  width: 25%;\n  height: 100vh;\n  position: fixed;\n  left: 0;\n  top: 0;\n  overflow: auto; }\n  .header h1 {\n    font-size: 3em; }\n  .header__nav {\n    border: 0; }\n", ""]);
+exports.push([module.i, ".header {\n  width: 25%;\n  height: 100vh;\n  position: fixed;\n  left: 0;\n  top: 0;\n  overflow: auto;\n  z-index: 10;\n  background-color: #fff; }\n  @media screen and (max-width: 600px) {\n    .header {\n      width: 100%;\n      height: auto; } }\n  .header h1 {\n    font-size: 3em; }\n    @media screen and (max-width: 600px) {\n      .header h1 {\n        font-size: 2em;\n        margin: 0.4em 0; } }\n  .header__nav {\n    border: 0; }\n    @media screen and (max-width: 600px) {\n      .header__nav {\n        margin: 0; }\n        .header__nav li {\n          width: 50%;\n          float: left; }\n        .header__nav:after {\n          content: '';\n          display: table;\n          clear: both; } }\n", ""]);
 
 // exports
 
@@ -288,7 +288,7 @@ AppHeaderComponent = __decorate([
 /***/ "../../../../../src/app/main-content/main-content.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n    <div class=\"col s9 offset-s3\">\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"row main-content\">\r\n    <div class=\"col m9 offset-m3\">\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -300,7 +300,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "@media screen and (max-width: 600px) {\n  .main-content {\n    padding-top: 100px; } }\n", ""]);
 
 // exports
 
@@ -532,7 +532,7 @@ var _a;
 /***/ "../../../../../src/app/main-content/picture-form/picture-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form\r\n#form class=\"row\"\r\n(submit)=\"savePicture($event)\">\r\n  <br>\r\n  <h4 class=\"center-align indigo-text\">\r\n    {{editMode ? picture.title : 'New picture!'}}\r\n  </h4>\r\n  <br>\r\n  <div class=\"card-panel grey lighten-5 z-depth-1\">\r\n    <div class=\"valign-wrapper\">\r\n      <div class=\"col s6\">\r\n        <app-picture-form-preview [picture]=\"picture\"></app-picture-form-preview>\r\n      </div>\r\n      <div class=\"col s6\">\r\n        <div class=\"input-field col s6\">\r\n          <input\r\n            #title\r\n            id=\"title\"\r\n            name=\"title\"\r\n            type=\"text\"\r\n            class=\"validate\"\r\n            required\r\n            [(ngModel)]=\"picture.title\">\r\n          <label\r\n          for=\"title\"\r\n          [class.active]=\"editMode\">Title</label>\r\n        </div>\r\n        <div class=\"input-field col s6\">\r\n          <input\r\n            #image\r\n            id=\"image\"\r\n            name=\"image\"\r\n            type=\"text\"\r\n            class=\"validate\"\r\n            required\r\n            [(ngModel)]=\"picture.imageUrl\">\r\n          <label\r\n          for=\"image\"\r\n          [class.active]=\"editMode\">Image</label>\r\n        </div>\r\n        <div class=\"input-field col s12\">\r\n          <textarea\r\n          #description\r\n          id=\"description\"\r\n          name=\"description\"\r\n          class=\"materialize-textarea\"\r\n          required\r\n          maxlength=\"100\"\r\n          [(ngModel)]=\"picture.description\"></textarea>\r\n          <label\r\n          for=\"description\"\r\n          [class.active]=\"editMode\">Description</label>\r\n        </div>\r\n        <button\r\n        type=\"submit\"\r\n        class=\"btn\">{{editMode ? 'save changes': 'save'}}</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</form>\r\n"
+module.exports = "<form\r\n#form class=\"row\"\r\n(submit)=\"savePicture($event)\">\r\n  <br>\r\n  <h4 class=\"center-align indigo-text\">\r\n    {{editMode ? picture.title : 'New picture!'}}\r\n  </h4>\r\n  <br>\r\n  <div class=\"card-panel grey lighten-5 z-depth-1\">\r\n    <div class=\"row\">\r\n      <div class=\"col m6 s12\">\r\n        <app-picture-form-preview [picture]=\"picture\"></app-picture-form-preview>\r\n      </div>\r\n      <div class=\"col m6 s12\">\r\n        <div class=\"input-field col m6 s12\">\r\n          <input\r\n            #title\r\n            id=\"title\"\r\n            name=\"title\"\r\n            type=\"text\"\r\n            class=\"validate\"\r\n            required\r\n            [(ngModel)]=\"picture.title\">\r\n          <label\r\n          for=\"title\"\r\n          [class.active]=\"editMode\">Title</label>\r\n        </div>\r\n        <div class=\"input-field col m6 s12\">\r\n          <input\r\n            #image\r\n            id=\"image\"\r\n            name=\"image\"\r\n            type=\"text\"\r\n            class=\"validate\"\r\n            required\r\n            [(ngModel)]=\"picture.imageUrl\">\r\n          <label\r\n          for=\"image\"\r\n          [class.active]=\"editMode\">Image</label>\r\n        </div>\r\n        <div class=\"input-field col s12\">\r\n          <textarea\r\n          #description\r\n          id=\"description\"\r\n          name=\"description\"\r\n          class=\"materialize-textarea\"\r\n          required\r\n          maxlength=\"100\"\r\n          [(ngModel)]=\"picture.description\"></textarea>\r\n          <label\r\n          for=\"description\"\r\n          [class.active]=\"editMode\">Description</label>\r\n        </div>\r\n        <button\r\n        type=\"submit\"\r\n        class=\"btn\">{{editMode ? 'save changes': 'save'}}</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</form>\r\n"
 
 /***/ }),
 
